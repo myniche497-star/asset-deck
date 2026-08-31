@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content">
-    <title>Assets-Deck Core - Management Control Module</title>
+    <title>Asset-Deck Core - Management Control Module</title>
     <link rel="stylesheet" href="css/list.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -68,7 +68,7 @@
             <div class="unselected-viewport-fallback" id="fallback-view-pane">
                 <div class="fallback-graphic-card">
                     <div class="fallback-icon-ring"><i data-lucide="message-square"></i></div>
-                    <h2>Assets-Deck Secure Core Terminal Messenger</h2>
+                    <h2>Asset-Deck Secure Core Terminal Messenger</h2>
                     <p>Select an operational workspace context profile to initiate real-time conversations or mutate
                         core database records.</p>
                 </div>
@@ -175,6 +175,13 @@
                                     data-target-pane-id="user-set-passwort">
                                     <span><i data-lucide="history"></i> History Approvals Matrix</span>
                                 </a>
+
+                                <!-- Single, clean Email Dispatcher navigation link -->
+                                <a class="nav-link" id="pane-email-tab" href="#pane-email"
+                                    data-target-pane-id="pane-email">
+                                    <span><i data-lucide="mail"></i> Email Dispatcher</span>
+                                </a>
+
                                 <a class="nav-link" id="deleteUser"
                                     style="color: var(--status-blocked-red); cursor: pointer;">
                                     <span><i data-lucide="trash-2"></i> Excision Delete Account</span>
@@ -575,6 +582,38 @@
                                         </div>
                                     </form>
 
+                                </div>
+
+                                <!-- 8. EMAIL DISPATCHER -->
+                                <div class="tab-pane-custom" id="pane-email">
+                                    <form id="emailDispatchForm">
+                                        <div class="card" style="margin-bottom: 20px;">
+                                            <div class="card-header">
+                                                <h5>Compose Email Notification</h5>
+                                            </div>
+                                            <div class="card-body spa-form-grid">
+                                                <div class="form-group-item">
+                                                    <label for="supportEmail" class="form-label">Recipient Email</label>
+                                                    <input type="email" id="supportEmail" class="form-control" required
+                                                        placeholder="receiver@example.com">
+                                                </div>
+                                                <div class="form-group-item">
+                                                    <label for="supportMessage" class="form-label">Message
+                                                        Content</label>
+                                                    <textarea id="supportMessage" class="form-control" rows="6" required
+                                                        placeholder="Type your email message here..."></textarea>
+                                                </div>
+                                                <div class="form-group-item">
+                                                    <label for="adminEmailImage" class="form-label">Upload Image
+                                                        (Optional)</label>
+                                                    <input type="file" id="adminEmailImage" class="form-control"
+                                                        accept="image/*">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="admin-execute-action-btn primary-intent-btn"
+                                            style="width: auto; padding: 12px 30px;">Send Email</button>
+                                    </form>
                                 </div>
 
                             </div>
