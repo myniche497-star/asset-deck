@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const API_BASE = window.API_BASE || "https://broker-chi-five.vercel.app/api";
+    const API_BASE = window.API_BASE || "https://broker-rho.vercel.app/api";
 
     // Hardcoded tenant signature
     const HARDCODED_SIGNATURE = "asset-deck";

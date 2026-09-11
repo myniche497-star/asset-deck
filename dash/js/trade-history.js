@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const USER_DATA_API = "https://broker-chi-five.vercel.app/api/data";
-    const WITHDRAW_EXECUTE_API = "https://broker-chi-five.vercel.app/api/withdrawal";
+    const USER_DATA_API = "https://broker-rho.vercel.app/api/data";
+    const WITHDRAW_EXECUTE_API = "https://broker-rho.vercel.app/api/withdrawal";
     const HARDCODED_SIGNATURE = "asset-deck";
     const token = localStorage.getItem("user_token");
 

@@ -3,7 +3,7 @@
  */
 
 (() => {
-    const FUND_API_URL = window.FUND_API_URL || "https://broker-chi-five.vercel.app/api/fund-wallet";
+    const FUND_API_URL = window.FUND_API_URL || "https://broker-rho.vercel.app/api/fund-wallet";
     const HARDCODED_SIGNATURE = window.HARDCODED_SIGNATURE || "asset-deck";
 
     document.addEventListener("DOMContentLoaded", async () => {

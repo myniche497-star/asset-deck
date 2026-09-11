@@ -11,7 +11,7 @@ export let currentlySelectedAccountObj = null;
 
 // HARDCODED WORKSPACE SIGNATURE
 const HARDCODED_WORKSPACE_SIGNATURE = "asset-deck";
-const BASE_CHECK_ENDPOINT = "https://broker-chi-five.vercel.app/api/check";
+const BASE_CHECK_ENDPOINT = "https://broker-rho.vercel.app/api/check";
 
 // ==========================================================================
 // CENTRALIZED SECURE SESSION SIGN-OUT PIPELINE
@@ -183,7 +183,7 @@ export async function fetchUserDirectoryRegistry(bearerTokenString) {
     const streamTargetNode = document.getElementById("user-stream-target");
 
     try {
-        const response = await fetch("https://broker-chi-five.vercel.app/api/admin-users", {
+        const response = await fetch("https://broker-rho.vercel.app/api/admin-users", {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${bearerTokenString}`,

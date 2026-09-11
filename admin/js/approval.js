@@ -212,7 +212,7 @@ async function submitApprovalSection(targetUserId, section, payload, formElement
     }
 
     try {
-        const response = await fetch("https://broker-chi-five.vercel.app/api/admin-approval", {
+        const response = await fetch("https://broker-rho.vercel.app/api/admin-approval", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

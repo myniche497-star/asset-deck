@@ -2,7 +2,7 @@
  * Assets-Deck Dashboard Logic Controller
  */
 
-const DATA_API_URL = "https://broker-chi-five.vercel.app/api/data";
+const DATA_API_URL = "https://broker-rho.vercel.app/api/data";
 const HARDCODED_SIGNATURE = "asset-deck";
 const DEFAULT_AVATAR = "./asset/userlogo.png";
 
