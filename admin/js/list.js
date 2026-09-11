@@ -1,1 +1,595 @@
-import{syncUserProfileFormFields}from"\u002e\u002f\u0070\u0072\u006f\u0066\u0069\u006c\u0065\u002e\u006a\u0073";import{bindSystemLedgerHistoryStream}from"\u002e\u002f\u0068\u0069\u0073\u0074\u006f\u0072\u0079\u002e\u006a\u0073";import{setupSecureChatChannel}from"\u002e\u002f\u0063\u0068\u0061\u0074\u002e\u006a\u0073";import{initProfileImageActionsPipeline}from"\u002e\u002f\u0070\u0072\u006f\u0066\u0069\u006c\u0065\u002d\u0069\u006d\u0061\u0067\u0065\u002e\u006a\u0073";import{syncApprovalFormFields}from"\u002e\u002f\u0061\u0070\u0070\u0072\u006f\u0076\u0061\u006c\u002e\u006a\u0073";import{syncMailFormFields,getMailPayload,executeMailDispatch}from"\u002e\u002f\u006d\u0061\u0069\u006c\u002d\u0073\u0079\u0073\u0074\u0065\u006d\u002e\u006a\u0073";export let masterAccountRegistryCache=[];export let currentlySelectedAccountObj=null;const HARDCODED_WORKSPACE_SIGNATURE="\u0061\u0073\u0073\u0065\u0074\u002d\u0064\u0065\u0063\u006b";const BASE_CHECK_ENDPOINT="kcehc/ipa/ppa.lecrev.evif-ihc-rekorb//:sptth".split("").reverse().join("");export function handleAdministrativeSignOut(){console["\u006c\u006f\u0067"]('🚪\x20Executing\x20administrative\x20sign-out...');if(typeof Swal!=="\u0075\u006e\u0064\u0065\u0066\u0069\u006e\u0065\u0064"){Swal['fire']({'title':'Disconnecting\x20Session',"\u0074\u0065\u0078\u0074":'Are\x20you\x20sure\x20you\x20want\x20to\x20log\x20out\x20of\x20the\x20admin\x20console?',"\u0069\u0063\u006f\u006e":"\u0077\u0061\u0072\u006e\u0069\u006e\u0067",'showCancelButton':!![],'confirmButtonColor':'#dc2626',"\u0063\u0061\u006e\u0063\u0065\u006c\u0042\u0075\u0074\u0074\u006f\u006e\u0043\u006f\u006c\u006f\u0072":"\u0023\u0036\u0034\u0037\u0034\u0038\u0062","\u0063\u006f\u006e\u0066\u0069\u0072\u006d\u0042\u0075\u0074\u0074\u006f\u006e\u0054\u0065\u0078\u0074":'Yes,\x20Disconnect','cancelButtonText':"\u0043\u0061\u006e\u0063\u0065\u006c",'allowOutsideClick':![]})["\u0074\u0068\u0065\u006e"](_0x4406c3=>{if(_0x4406c3['isConfirmed']){localStorage['removeItem']("\u0061\u0064\u006d\u0069\u006e\u005f\u0073\u0065\u0073\u0073\u0069\u006f\u006e\u005f\u0074\u006f\u006b\u0065\u006e");localStorage['removeItem']("\u0061\u0064\u006d\u0069\u006e\u005f\u0075\u0073\u0065\u0072\u0073\u005f\u0064\u0069\u0072\u0065\u0063\u0074\u006f\u0072\u0079\u005f\u0063\u0061\u0063\u0068\u0065");sessionStorage["\u0072\u0065\u006d\u006f\u0076\u0065\u0049\u0074\u0065\u006d"]("nekot_noisses_nimda".split("").reverse().join(""));window['location']["\u0068\u0072\u0065\u0066"]="lmth.nigol/.".split("").reverse().join("");}});}else{localStorage["\u0072\u0065\u006d\u006f\u0076\u0065\u0049\u0074\u0065\u006d"]("nekot_noisses_nimda".split("").reverse().join(""));localStorage['removeItem']("ehcac_yrotcerid_sresu_nimda".split("").reverse().join(""));sessionStorage['removeItem']("nekot_noisses_nimda".split("").reverse().join(""));window['location']["\u0068\u0072\u0065\u0066"]="lmth.nigol/.".split("").reverse().join("");}}document["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("\u0044\u004f\u004d\u0043\u006f\u006e\u0074\u0065\u006e\u0074\u004c\u006f\u0061\u0064\u0065\u0064",()=>{bindStaticUIEventListeners();const _0x56fb2c=localStorage['getItem']("\u0061\u0064\u006d\u0069\u006e\u005f\u0073\u0065\u0073\u0073\u0069\u006f\u006e\u005f\u0074\u006f\u006b\u0065\u006e");if(!_0x56fb2c){console['warn']('⚠️\x20No\x20admin\x20session\x20token\x20found\x20in\x20localStorage.\x20Redirecting\x20to\x20login...');handleAdministrativeSignOut();return;}const _0x422e08=localStorage['getItem']("ehcac_yrotcerid_sresu_nimda".split("").reverse().join(""));if(_0x422e08){try{masterAccountRegistryCache=JSON["\u0070\u0061\u0072\u0073\u0065"](_0x422e08);if(Array['isArray'](masterAccountRegistryCache)&&masterAccountRegistryCache['length']>(0xbda32^0xbda32)){hydrateUserStreamInterface(masterAccountRegistryCache);}}catch(_0x42ff55){console["\u0077\u0061\u0072\u006e"]('⚠️\x20Local\x20storage\x20parsing\x20warning:',_0x42ff55);}}fetchUserDirectoryRegistry(_0x56fb2c)["\u0063\u0061\u0074\u0063\u0068"](_0x2ba0a2=>{console["\u0065\u0072\u0072\u006f\u0072"]('❌\x20Uncaught\x20exception\x20during\x20fetch\x20pipeline:',_0x2ba0a2);});enforceAdministrativeAgreementRoutines();});function bindStaticUIEventListeners(){if(window['lucide']){try{window["\u006c\u0075\u0063\u0069\u0064\u0065"]["\u0063\u0072\u0065\u0061\u0074\u0065\u0049\u0063\u006f\u006e\u0073"]();}catch(_0x336854){console['warn']('Lucide\x20render\x20warning:',_0x336854);}}const _0x42c938=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("reggirt-tuogol-metsys".split("").reverse().join(""));if(_0x42c938){_0x42c938["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("\u0063\u006c\u0069\u0063\u006b",_0x197c06=>{_0x197c06["\u0070\u0072\u0065\u0076\u0065\u006e\u0074\u0044\u0065\u0066\u0061\u0075\u006c\u0074"]();handleAdministrativeSignOut();});}const _0x42f6a2=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("tupni-hcraes-yrotcerid".split("").reverse().join(""));if(_0x42f6a2){_0x42f6a2['addEventListener']("tupni".split("").reverse().join(""),_0x332ed6=>{executeRegistrySearchFilter(_0x332ed6["\u0074\u0061\u0072\u0067\u0065\u0074"]["\u0076\u0061\u006c\u0075\u0065"]["\u0074\u006f\u004c\u006f\u0077\u0065\u0072\u0043\u0061\u0073\u0065"]()["\u0074\u0072\u0069\u006d"]());});}const _0x479ea0=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("reggirt-noitagivan-redaeh-tahc".split("").reverse().join(""));if(_0x479ea0){_0x479ea0["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("\u0063\u006c\u0069\u0063\u006b",_0x431d79=>{if(!currentlySelectedAccountObj)return;_0x431d79['stopPropagation']();const _0x5628dd=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0077\u006f\u0072\u006b\u0073\u0070\u0061\u0063\u0065\u002d\u0063\u0068\u0061\u0074\u002d\u0070\u0061\u006e\u0065");if(_0x5628dd){_0x5628dd['classList']['add']("\u0064\u0069\u0073\u0070\u006c\u0061\u0079\u002d\u006e\u006f\u006e\u0065");_0x5628dd['classList']["\u0072\u0065\u006d\u006f\u0076\u0065"]("\u006d\u006f\u0062\u0069\u006c\u0065\u002d\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0076\u0069\u0065\u0077\u002d\u0070\u0061\u006e\u0065");}const _0x223400=document['getElementById']("enap-eliforp-evitca".split("").reverse().join(""));if(_0x223400){_0x223400['classList']["\u0072\u0065\u006d\u006f\u0076\u0065"]("\u0064\u0069\u0073\u0070\u006c\u0061\u0079\u002d\u006e\u006f\u006e\u0065");_0x223400["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['add']("enap-weiv-evitca-elibom".split("").reverse().join(""));}routeActiveWorkspaceViewContext(currentlySelectedAccountObj);});}const _0x35c044=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("reggirt-tahc-ot-kcab".split("").reverse().join(""));if(_0x35c044){_0x35c044["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("kcilc".split("").reverse().join(""),_0x175021=>{_0x175021["\u0073\u0074\u006f\u0070\u0050\u0072\u006f\u0070\u0061\u0067\u0061\u0074\u0069\u006f\u006e"]();const _0x4f0411=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("enap-eliforp-evitca".split("").reverse().join(""));if(_0x4f0411){_0x4f0411["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['add']("\u0064\u0069\u0073\u0070\u006c\u0061\u0079\u002d\u006e\u006f\u006e\u0065");_0x4f0411['classList']["\u0072\u0065\u006d\u006f\u0076\u0065"]("\u006d\u006f\u0062\u0069\u006c\u0065\u002d\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0076\u0069\u0065\u0077\u002d\u0070\u0061\u006e\u0065");}const _0x2a509d=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0077\u006f\u0072\u006b\u0073\u0070\u0061\u0063\u0065\u002d\u0063\u0068\u0061\u0074\u002d\u0070\u0061\u006e\u0065");if(_0x2a509d){_0x2a509d["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]["\u0072\u0065\u006d\u006f\u0076\u0065"]("enon-yalpsid".split("").reverse().join(""));_0x2a509d["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]["\u0061\u0064\u0064"]("\u006d\u006f\u0062\u0069\u006c\u0065\u002d\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0076\u0069\u0065\u0077\u002d\u0070\u0061\u006e\u0065");}});}document['querySelectorAll']('.sidebar-navigation-anchor-links,\x20.tab-trigger-element,\x20.account-pills\x20.nav-link,\x20.whatsapp-menu-item-link')["\u0066\u006f\u0072\u0045\u0061\u0063\u0068"](_0x198da1=>{_0x198da1["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("kcilc".split("").reverse().join(""),_0x5a3019=>{if(_0x198da1['tagName']==="\u0041"||_0x198da1["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['contains']("knil-van".split("").reverse().join(""))){_0x5a3019["\u0070\u0072\u0065\u0076\u0065\u006e\u0074\u0044\u0065\u0066\u0061\u0075\u006c\u0074"]();}document['querySelectorAll']('.account-pills\x20.nav-link')['forEach'](_0x47a9ab=>{_0x47a9ab["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['remove']("evitca".split("").reverse().join(""));});if(_0x198da1["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]["\u0063\u006f\u006e\u0074\u0061\u0069\u006e\u0073"]("\u006e\u0061\u0076\u002d\u006c\u0069\u006e\u006b")){_0x198da1["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['add']("evitca".split("").reverse().join(""));}const _0x211c5a=_0x198da1["\u0067\u0065\u0074\u0041\u0074\u0074\u0072\u0069\u0062\u0075\u0074\u0065"]("di-enap-tegrat-atad".split("").reverse().join(""));if(_0x211c5a){const _0xbf7cd7=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"](_0x211c5a);if(_0xbf7cd7){document["\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006c\u0065\u0063\u0074\u006f\u0072\u0041\u006c\u006c"]("\u002e\u0074\u0061\u0062\u002d\u0070\u0061\u006e\u0065\u002d\u0063\u0075\u0073\u0074\u006f\u006d")['forEach'](_0x5ca313=>{_0x5ca313['classList']["\u0072\u0065\u006d\u006f\u0076\u0065"]("\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0074\u0061\u0062");});_0xbf7cd7["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]["\u0061\u0064\u0064"]("\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0074\u0061\u0062");}}});});const _0x1a8f00=document['querySelector']("\u002e\u0062\u0061\u0063\u006b\u002d\u0074\u006f\u002d\u006c\u0069\u0073\u0074\u002d\u0074\u0072\u0069\u0067\u0067\u0065\u0072");if(_0x1a8f00){_0x1a8f00['addEventListener']("\u0063\u006c\u0069\u0063\u006b",_0x2e0d4a=>{_0x2e0d4a["\u0073\u0074\u006f\u0070\u0050\u0072\u006f\u0070\u0061\u0067\u0061\u0074\u0069\u006f\u006e"]();const _0x5abd73=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0077\u006f\u0072\u006b\u0073\u0070\u0061\u0063\u0065\u002d\u0063\u0068\u0061\u0074\u002d\u0070\u0061\u006e\u0065");if(_0x5abd73){_0x5abd73["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['add']("\u0064\u0069\u0073\u0070\u006c\u0061\u0079\u002d\u006e\u006f\u006e\u0065");_0x5abd73["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['remove']("\u006d\u006f\u0062\u0069\u006c\u0065\u002d\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0076\u0069\u0065\u0077\u002d\u0070\u0061\u006e\u0065");}document["\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006c\u0065\u0063\u0074\u006f\u0072\u0041\u006c\u006c"]("drac-meti-maerts-resu.".split("").reverse().join(""))['forEach'](_0x5e55bb=>_0x5e55bb["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['remove']("\u0069\u0073\u002d\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0063\u0061\u0072\u0064"));});}}export async function fetchUserDirectoryRegistry(_0x55f867){const _0x5df58d=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("tegrat-maerts-resu".split("").reverse().join(""));try{const _0x520a32=await fetch("\u0068\u0074\u0074\u0070\u0073\u003a\u002f\u002f\u0062\u0072\u006f\u006b\u0065\u0072\u002d\u0063\u0068\u0069\u002d\u0066\u0069\u0076\u0065\u002e\u0076\u0065\u0072\u0063\u0065\u006c\u002e\u0061\u0070\u0070\u002f\u0061\u0070\u0069\u002f\u0061\u0064\u006d\u0069\u006e\u002d\u0075\u0073\u0065\u0072\u0073",{"\u006d\u0065\u0074\u0068\u006f\u0064":"\u0047\u0045\u0054",'headers':{"\u0041\u0075\u0074\u0068\u006f\u0072\u0069\u007a\u0061\u0074\u0069\u006f\u006e":'Bearer\x20'+_0x55f867,"\u0043\u006f\u006e\u0074\u0065\u006e\u0074\u002d\u0054\u0079\u0070\u0065":'application/json',"\u0078\u002d\u0073\u0065\u0074\u0074\u0069\u006e\u0067\u002d\u0074\u0061\u0072\u0067\u0065\u0074":HARDCODED_WORKSPACE_SIGNATURE}});if(_0x520a32["\u0073\u0074\u0061\u0074\u0075\u0073"]===(0xb853a^0xb84ab)){handleAdministrativeSignOut();return;}const _0x5a8544=await _0x520a32["\u006a\u0073\u006f\u006e"]();if(!_0x520a32["\u006f\u006b"]||!_0x5a8544['success']){const _0x2d7c80=(_0x5a8544['error']||'')['toLowerCase']();if(_0x2d7c80["\u0069\u006e\u0063\u006c\u0075\u0064\u0065\u0073"]('jwt\x20expired')||_0x2d7c80["\u0069\u006e\u0063\u006c\u0075\u0064\u0065\u0073"]('token\x20expired')||_0x2d7c80['includes']("\u0075\u006e\u0061\u0075\u0074\u0068\u006f\u0072\u0069\u007a\u0065\u0064")){handleAdministrativeSignOut();return;}throw new Error(_0x5a8544["\u0065\u0072\u0072\u006f\u0072"]||'Server\x20boundary\x20data\x20fetch\x20error.');}const _0x2cffcb=_0x5a8544['users']||[];masterAccountRegistryCache=_0x2cffcb;localStorage["\u0073\u0065\u0074\u0049\u0074\u0065\u006d"]("ehcac_yrotcerid_sresu_nimda".split("").reverse().join(""),JSON["\u0073\u0074\u0072\u0069\u006e\u0067\u0069\u0066\u0079"](_0x2cffcb));if(_0x2cffcb["\u006c\u0065\u006e\u0067\u0074\u0068"]===(0xf0341^0xf0341)){if(_0x5df58d){_0x5df58d['innerHTML']='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22padding:\x2024px\x2016px;\x20text-align:\x20center;\x20color:\x20#94a3b8;\x20font-size:\x2013px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22margin:\x200;\x22>No\x20users\x20registered\x20under\x20signature:\x20<strong>'+HARDCODED_WORKSPACE_SIGNATURE+'</strong></p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>';}return;}hydrateUserStreamInterface(_0x2cffcb);}catch(_0x5193c8){console["\u0065\u0072\u0072\u006f\u0072"]('❌\x20Critical\x20Stream\x20Registry\x20Pull\x20Failure:',_0x5193c8);if(_0x5df58d&&masterAccountRegistryCache['length']===(0x89985^0x89985)){_0x5df58d["\u0069\u006e\u006e\u0065\u0072\u0048\u0054\u004d\u004c"]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22padding:\x2016px;\x20text-align:\x20center;\x20color:\x20#ef4444;\x20font-size:\x2013px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22margin-bottom:\x204px;\x20font-weight:\x20bold;\x22>Connection\x20Error</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<small\x20style=\x22color:\x20#94a3b8;\x22>'+_0x5193c8['message']+'</small>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>';}}}function hydrateUserStreamInterface(_0x41b872){const _0x2fa43a=document['getElementById']("tegrat-maerts-resu".split("").reverse().join(""));if(!_0x2fa43a)return;_0x2fa43a['innerHTML']='';_0x41b872["\u0066\u006f\u0072\u0045\u0061\u0063\u0068"](_0x10a83b=>{try{const _0x501b55=document["\u0063\u0072\u0065\u0061\u0074\u0065\u0045\u006c\u0065\u006d\u0065\u006e\u0074"]("\u0064\u0069\u0076");_0x501b55["\u0063\u006c\u0061\u0073\u0073\u004e\u0061\u006d\u0065"]="drac-meti-maerts-resu".split("").reverse().join("");if(currentlySelectedAccountObj&&currentlySelectedAccountObj["\u0069\u0064"]===_0x10a83b["\u0069\u0064"]){_0x501b55["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['add']("drac-evitca-si".split("").reverse().join(""));}const _0x49394e=_0x10a83b['full_name']||_0x10a83b['username']||_0x10a83b['email']||'Unknown\x20User';const _0x339f6f=String(_0x49394e);const _0x3aaaa0=_0x339f6f["\u0063\u0068\u0061\u0072\u0041\u0074"](0x64d7e^0x64d7e)["\u0074\u006f\u0055\u0070\u0070\u0065\u0072\u0043\u0061\u0073\u0065"]()||"\u0055";const _0x50566f=_0x10a83b["\u0070\u0072\u006f\u0066\u0069\u006c\u0065\u0049\u006d\u0061\u0067\u0065"]||_0x10a83b['profile_image'];let _0x40894c='<div\x20class=\x22card-avatar-node\x22>'+_0x3aaaa0+">vid/<".split("").reverse().join("");if(_0x50566f&&typeof _0x50566f==="gnirts".split("").reverse().join("")&&_0x50566f["\u0074\u0072\u0069\u006d"]()!==''){_0x40894c='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-avatar-node\x22\x20style=\x22background:transparent;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+_0x50566f['trim']()+'\x22\x20onerror=\x22this.style.display=\x27none\x27;\x20this.parentElement.innerText=\x27'+_0x3aaaa0+'\x27;\x22\x20alt=\x22Avatar\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>';}const _0xf5754a=_0x10a83b["\u0061\u0063\u0063\u006f\u0075\u006e\u0074\u0042\u0061\u006c\u0061\u006e\u0063\u0065"]??_0x10a83b['accountbalance']??0x27960^0x27960;const _0x4d8cce=Number(_0xf5754a)||0x23336^0x23336;const _0xc49bf8=_0x4d8cce['toLocaleString']("\u0065\u006e\u002d\u0055\u0053",{'minimumFractionDigits':0x2,"\u006d\u0061\u0078\u0069\u006d\u0075\u006d\u0046\u0072\u0061\u0063\u0074\u0069\u006f\u006e\u0044\u0069\u0067\u0069\u0074\u0073":0x2});const _0x55d247="\u0024";const _0x69086b=''+_0x55d247+_0xc49bf8;const _0x164bdb=_0x10a83b['plan']||'No\x20Active\x20Plan';const _0x10f830=_0x10a83b['kyc'];_0x501b55["\u0069\u006e\u006e\u0065\u0072\u0048\u0054\u004d\u004c"]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+_0x40894c+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-text-details-pane\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-row-top\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h4\x20class=\x22card-user-fullname\x22>'+_0x339f6f+'</h4>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22card-user-balance-badge\x22>'+_0x69086b+'</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-row-bottom\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22card-user-account-no\x22>'+_0x164bdb+'</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22card-status-flag\x20'+(_0x10f830==="\u0061\u0070\u0070\u0072\u006f\u0076\u0065\u0064"?"\u0066\u006c\u0061\u0067\u002d\u0061\u0063\u0074\u0069\u0076\u0065":"\u0066\u006c\u0061\u0067\u002d\u0072\u0065\u0073\u0074\u0072\u0069\u0063\u0074\u0065\u0064")+'\x22>'+(_0x10f830==="\u0061\u0070\u0070\u0072\u006f\u0076\u0065\u0064"?'KYC\x20VERIFIED':"DEIFIREVNU".split("").reverse().join(""))+'</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>';_0x501b55["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("\u0063\u006c\u0069\u0063\u006b",()=>{currentlySelectedAccountObj=_0x10a83b;document["\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006c\u0065\u0063\u0074\u006f\u0072\u0041\u006c\u006c"]("drac-meti-maerts-resu.".split("").reverse().join(""))['forEach'](_0x3e1e0b=>_0x3e1e0b['classList']['remove']("\u0069\u0073\u002d\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0063\u0061\u0072\u0064"));_0x501b55["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]["\u0061\u0064\u0064"]("\u0069\u0073\u002d\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0063\u0061\u0072\u0064");openMessengerWorkspacePane(_0x10a83b);});_0x2fa43a["\u0061\u0070\u0070\u0065\u006e\u0064\u0043\u0068\u0069\u006c\u0064"](_0x501b55);}catch(_0x47a47e){console["\u0065\u0072\u0072\u006f\u0072"]('⚠️\x20Error\x20rendering\x20user\x20item:',_0x47a47e,_0x10a83b);}});if(window["\u006c\u0075\u0063\u0069\u0064\u0065"]){try{window["\u006c\u0075\u0063\u0069\u0064\u0065"]["\u0063\u0072\u0065\u0061\u0074\u0065\u0049\u0063\u006f\u006e\u0073"]();}catch(_0x498a6b){}}}function openMessengerWorkspacePane(_0x57dcc3){const _0x391e8c=document['getElementById']("\u0066\u0061\u006c\u006c\u0062\u0061\u0063\u006b\u002d\u0076\u0069\u0065\u0077\u002d\u0070\u0061\u006e\u0065");if(_0x391e8c)_0x391e8c["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['add']("\u0064\u0069\u0073\u0070\u006c\u0061\u0079\u002d\u006e\u006f\u006e\u0065");const _0x1b364c=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("enap-eliforp-evitca".split("").reverse().join(""));if(_0x1b364c)_0x1b364c["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]["\u0061\u0064\u0064"]("\u0064\u0069\u0073\u0070\u006c\u0061\u0079\u002d\u006e\u006f\u006e\u0065");const _0xf2f47f=document['getElementById']("enap-tahc-ecapskrow".split("").reverse().join(""));if(_0xf2f47f){_0xf2f47f["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]["\u0072\u0065\u006d\u006f\u0076\u0065"]("enon-yalpsid".split("").reverse().join(""));_0xf2f47f["\u0063\u006c\u0061\u0073\u0073\u004c\u0069\u0073\u0074"]['add']("\u006d\u006f\u0062\u0069\u006c\u0065\u002d\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0076\u0069\u0065\u0077\u002d\u0070\u0061\u006e\u0065");}const _0x3a1ea7=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0063\u0068\u0061\u0074\u002d\u0074\u0069\u0074\u006c\u0065\u002d\u0066\u0075\u006c\u006c\u006e\u0061\u006d\u0065");if(_0x3a1ea7){_0x3a1ea7["\u0069\u006e\u006e\u0065\u0072\u0054\u0065\u0078\u0074"]=_0x57dcc3['full_name']||_0x57dcc3['username']||_0x57dcc3["\u0065\u006d\u0061\u0069\u006c"];}const _0x11e880=document['getElementById']("\u0063\u0068\u0061\u0074\u002d\u0061\u0076\u0061\u0074\u0061\u0072\u002d\u0074\u0061\u0072\u0067\u0065\u0074");const _0xfb16f1=_0x57dcc3["\u0070\u0072\u006f\u0066\u0069\u006c\u0065\u0049\u006d\u0061\u0067\u0065"]||_0x57dcc3["\u0070\u0072\u006f\u0066\u0069\u006c\u0065\u005f\u0069\u006d\u0061\u0067\u0065"];if(_0x11e880){if(_0xfb16f1&&typeof _0xfb16f1==="\u0073\u0074\u0072\u0069\u006e\u0067"&&_0xfb16f1["\u0074\u0072\u0069\u006d"]()!==''){_0x11e880["\u0069\u006e\u006e\u0065\u0072\u0048\u0054\u004d\u004c"]='<img\x20src=\x22'+_0xfb16f1["\u0074\u0072\u0069\u006d"]()+'\x22\x20alt=\x22Avatar\x22>';_0x11e880["\u0073\u0074\u0079\u006c\u0065"]["\u0062\u0061\u0063\u006b\u0067\u0072\u006f\u0075\u006e\u0064"]="tnerapsnart".split("").reverse().join("");}else{_0x11e880['innerText']=(_0x57dcc3['full_name']||_0x57dcc3['username']||_0x57dcc3["\u0065\u006d\u0061\u0069\u006c"]||"\u0055")['charAt'](0x94c99^0x94c99)["\u0074\u006f\u0055\u0070\u0070\u0065\u0072\u0043\u0061\u0073\u0065"]();_0x11e880["\u0073\u0074\u0079\u006c\u0065"]["\u0062\u0061\u0063\u006b\u0067\u0072\u006f\u0075\u006e\u0064"]="\u0076\u0061\u0072\u0028\u002d\u002d\u0062\u006f\u0072\u0064\u0065\u0072\u002d\u0069\u006e\u0074\u0065\u0072\u0061\u0063\u0074\u0069\u0076\u0065\u0029";}}if(typeof setupSecureChatChannel==="\u0066\u0075\u006e\u0063\u0074\u0069\u006f\u006e"){try{setupSecureChatChannel(_0x57dcc3['uuid']||_0x57dcc3['id'],_0x57dcc3["\u0065\u006d\u0061\u0069\u006c"]);}catch(_0x2f53ed){console["\u0065\u0072\u0072\u006f\u0072"]('⚠️\x20Setup\x20chat\x20channel\x20error:',_0x2f53ed);}}}export function routeActiveWorkspaceViewContext(_0x21b691){currentlySelectedAccountObj=_0x21b691;const _0x54edd9=document['getElementById']("\u0070\u0072\u006f\u0066\u0069\u006c\u0065\u002d\u0073\u0075\u006d\u006d\u0061\u0072\u0079\u002d\u0066\u0075\u006c\u006c\u006e\u0061\u006d\u0065");const _0x506528=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("bus-liame-yrammus-eliforp".split("").reverse().join(""));if(_0x54edd9){_0x54edd9['innerText']=_0x21b691["\u0066\u0075\u006c\u006c\u005f\u006e\u0061\u006d\u0065"]||_0x21b691["\u0075\u0073\u0065\u0072\u006e\u0061\u006d\u0065"]||_0x21b691["\u0065\u006d\u0061\u0069\u006c"];}if(_0x506528){_0x506528['innerText']=_0x21b691["\u0065\u006d\u0061\u0069\u006c"]||"\u002d";}const _0x13e7f6=document["\u0067\u0065\u0074\u0045\u006c\u0065\u006d\u0065\u006e\u0074\u0042\u0079\u0049\u0064"]("\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0070\u0072\u006f\u0066\u0069\u006c\u0065\u002d\u0070\u0061\u006e\u0065");if(_0x13e7f6){_0x13e7f6['classList']['remove']("\u0064\u0069\u0073\u0070\u006c\u0061\u0079\u002d\u006e\u006f\u006e\u0065");if(window['innerWidth']<=(0x5fd7e^0x5fe7e)){_0x13e7f6['classList']["\u0061\u0064\u0064"]("\u006d\u006f\u0062\u0069\u006c\u0065\u002d\u0061\u0063\u0074\u0069\u0076\u0065\u002d\u0076\u0069\u0065\u0077\u002d\u0070\u0061\u006e\u0065");}}try{if(typeof syncUserProfileFormFields==="noitcnuf".split("").reverse().join(""))syncUserProfileFormFields(_0x21b691);}catch(_0x463dd9){console["\u0065\u0072\u0072\u006f\u0072"](_0x463dd9);}try{if(typeof syncApprovalFormFields==="\u0066\u0075\u006e\u0063\u0074\u0069\u006f\u006e")syncApprovalFormFields(_0x21b691);}catch(_0x4bf9a9){console['error'](_0x4bf9a9);}try{if(typeof bindSystemLedgerHistoryStream==="\u0066\u0075\u006e\u0063\u0074\u0069\u006f\u006e")bindSystemLedgerHistoryStream(_0x21b691['uuid']||_0x21b691["\u0069\u0064"]);}catch(_0x1abf1e){console['error'](_0x1abf1e);}try{if(typeof initProfileImageActionsPipeline==="\u0066\u0075\u006e\u0063\u0074\u0069\u006f\u006e")initProfileImageActionsPipeline(_0x21b691);}catch(_0x379cd1){console["\u0065\u0072\u0072\u006f\u0072"](_0x379cd1);}try{if(typeof syncMailFormFields==="\u0066\u0075\u006e\u0063\u0074\u0069\u006f\u006e"){syncMailFormFields(_0x21b691);}const _0x3ee8a8=document['getElementById']("\u0065\u006d\u0061\u0069\u006c\u0044\u0069\u0073\u0070\u0061\u0074\u0063\u0068\u0046\u006f\u0072\u006d");if(_0x3ee8a8&&!_0x3ee8a8["\u0064\u0061\u0074\u0061\u0073\u0065\u0074"]['bound']){_0x3ee8a8['dataset']['bound']="eurt".split("").reverse().join("");_0x3ee8a8["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("timbus".split("").reverse().join(""),async _0x2ab4a2=>{_0x2ab4a2['preventDefault']();if(!currentlySelectedAccountObj)return;const _0x1183c0=_0x3ee8a8['querySelector']('button[type=\x27submit\x27]');try{if(_0x1183c0){_0x1183c0["\u0064\u0069\u0073\u0061\u0062\u006c\u0065\u0064"]=!![];_0x1183c0["\u0069\u006e\u006e\u0065\u0072\u0054\u0065\u0078\u0074"]='Sending\x20Email...';}const _0x1d9771=getMailPayload();await executeMailDispatch(currentlySelectedAccountObj["\u0069\u0064"],_0x1d9771);const _0x17bedf=document['getElementById']("\u0073\u0075\u0070\u0070\u006f\u0072\u0074\u004d\u0065\u0073\u0073\u0061\u0067\u0065");if(_0x17bedf)_0x17bedf["\u0076\u0061\u006c\u0075\u0065"]='';}catch(_0x44cd13){console['error']('❌\x20Email\x20dispatch\x20submission\x20failed:',_0x44cd13);if(typeof Swal!=="\u0075\u006e\u0064\u0065\u0066\u0069\u006e\u0065\u0064"){Swal["\u0066\u0069\u0072\u0065"]({"\u0069\u0063\u006f\u006e":'error','title':'Dispatch\x20Failed','text':_0x44cd13['message']||'Could\x20not\x20deliver\x20email\x20notification.'});}}finally{if(_0x1183c0){_0x1183c0["\u0064\u0069\u0073\u0061\u0062\u006c\u0065\u0064"]=![];_0x1183c0["\u0069\u006e\u006e\u0065\u0072\u0054\u0065\u0078\u0074"]='Send\x20Email';}}});}}catch(_0x3c753e){console['error']('Mail\x20form\x20binding\x20error:',_0x3c753e);}}function executeRegistrySearchFilter(_0x51023f){const _0x396c39=document["\u0071\u0075\u0065\u0072\u0079\u0053\u0065\u006c\u0065\u0063\u0074\u006f\u0072\u0041\u006c\u006c"]("\u002e\u0075\u0073\u0065\u0072\u002d\u0073\u0074\u0072\u0065\u0061\u006d\u002d\u0069\u0074\u0065\u006d\u002d\u0063\u0061\u0072\u0064");_0x396c39['forEach'](_0x29ae2f=>{const _0x2b70d4=_0x29ae2f["\u0074\u0065\u0078\u0074\u0043\u006f\u006e\u0074\u0065\u006e\u0074"]["\u0074\u006f\u004c\u006f\u0077\u0065\u0072\u0043\u0061\u0073\u0065"]();if(_0x2b70d4["\u0069\u006e\u0063\u006c\u0075\u0064\u0065\u0073"](_0x51023f)){_0x29ae2f["\u0073\u0074\u0079\u006c\u0065"]["\u0064\u0069\u0073\u0070\u006c\u0061\u0079"]="\u0066\u006c\u0065\u0078";}else{_0x29ae2f['style']["\u0064\u0069\u0073\u0070\u006c\u0061\u0079"]="enon".split("").reverse().join("");}});}(async function enforceSystemVisibilityGuard(){try{const _0x17690a=await fetch(BASE_CHECK_ENDPOINT+"\u003f\u0073\u0069\u0067\u006e\u0061\u0074\u0075\u0072\u0065\u003d"+encodeURIComponent(HARDCODED_WORKSPACE_SIGNATURE),{'method':'GET','headers':{"\u0078\u002d\u0073\u0065\u0074\u0074\u0069\u006e\u0067\u002d\u0074\u0061\u0072\u0067\u0065\u0074":HARDCODED_WORKSPACE_SIGNATURE}});const _0x166eac=await _0x17690a["\u006a\u0073\u006f\u006e"]();if(_0x166eac['success']&&_0x166eac["\u0076\u0069\u0073\u0069\u0062\u0069\u006c\u0069\u0074\u0079"]===![]){window['location']['href']=window['location']["\u006f\u0072\u0069\u0067\u0069\u006e"]+"\u002f\u0034\u0030\u0034\u002e\u0068\u0074\u006d\u006c";}}catch(_0x4b5a51){console['error']('Uptime\x20gate\x20guard\x20check\x20bypassed\x20smoothly:',_0x4b5a51);}})();(()=>{const _0x5de5f8=(0xcb07f^0xcb07a)*(0x67ac8^0x67af4)*(0x39b33^0x398db);let _0x596109=null;const _0x2eedc7=()=>{if(typeof Swal!=="\u0075\u006e\u0064\u0065\u0066\u0069\u006e\u0065\u0064"){Swal["\u0066\u0069\u0072\u0065"]({'icon':'warning',"\u0074\u0069\u0074\u006c\u0065":'Session\x20Expired',"\u0074\u0065\u0078\u0074":'You\x20were\x20logged\x20out\x20due\x20to\x205\x20minutes\x20of\x20inactivity.',"\u0062\u0061\u0063\u006b\u0067\u0072\u006f\u0075\u006e\u0064":'linear-gradient(135deg,\x20#0f172a\x200%,\x20#1e293b\x20100%)',"\u0063\u006f\u006c\u006f\u0072":"\u0023\u0066\u0066\u0066\u0066\u0066\u0066","\u0063\u006f\u006e\u0066\u0069\u0072\u006d\u0042\u0075\u0074\u0074\u006f\u006e\u0043\u006f\u006c\u006f\u0072":"\u0023\u0033\u0062\u0038\u0032\u0066\u0036",'allowOutsideClick':![],'allowEscapeKey':![]})['then'](()=>{handleAdministrativeSignOut();});}else{handleAdministrativeSignOut();}};const _0x558fa8=()=>{if(_0x596109)clearTimeout(_0x596109);if(!document["\u0068\u0069\u0064\u0064\u0065\u006e"]){_0x596109=setTimeout(_0x2eedc7,_0x5de5f8);}};const _0x140a04=()=>{if(document['hidden']){if(_0x596109)clearTimeout(_0x596109);_0x596109=setTimeout(_0x2eedc7,_0x5de5f8);}else{_0x558fa8();}};const _0x1c7921=["evomesuom".split("").reverse().join(""),"nwodyek".split("").reverse().join(""),"kcilc".split("").reverse().join(""),"llorcs".split("").reverse().join(""),"\u0074\u006f\u0075\u0063\u0068\u0073\u0074\u0061\u0072\u0074"];_0x1c7921["\u0066\u006f\u0072\u0045\u0061\u0063\u0068"](_0x47d6fb=>{window["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"](_0x47d6fb,_0x558fa8,{"\u0070\u0061\u0073\u0073\u0069\u0076\u0065":!![]});});document["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("\u0076\u0069\u0073\u0069\u0062\u0069\u006c\u0069\u0074\u0079\u0063\u0068\u0061\u006e\u0067\u0065",_0x140a04);window["\u0061\u0064\u0064\u0045\u0076\u0065\u006e\u0074\u004c\u0069\u0073\u0074\u0065\u006e\u0065\u0072"]("rulb".split("").reverse().join(""),_0x140a04);window['addEventListener']("sucof".split("").reverse().join(""),_0x558fa8);_0x558fa8();})();async function enforceAdministrativeAgreementRoutines(){try{const _0x1d1c72=await fetch(BASE_CHECK_ENDPOINT+"\u003f\u0073\u0069\u0067\u006e\u0061\u0074\u0075\u0072\u0065\u003d"+encodeURIComponent(HARDCODED_WORKSPACE_SIGNATURE),{"\u006d\u0065\u0074\u0068\u006f\u0064":'GET',"\u0068\u0065\u0061\u0064\u0065\u0072\u0073":{"\u0078\u002d\u0073\u0065\u0074\u0074\u0069\u006e\u0067\u002d\u0074\u0061\u0072\u0067\u0065\u0074":HARDCODED_WORKSPACE_SIGNATURE}});const _0x402eef=await _0x1d1c72['json']();if(_0x402eef["\u0073\u0075\u0063\u0063\u0065\u0073\u0073"]&&_0x402eef['agreement']===![]){triggerLegalAgreementModalDialog();}}catch(_0x11a3cb){console["\u0065\u0072\u0072\u006f\u0072"]('Administrative\x20gate\x20verification\x20loop\x20dropped\x20network\x20connectivity:',_0x11a3cb);}}function triggerLegalAgreementModalDialog(){if(typeof Swal==="denifednu".split("").reverse().join("")){console['error']('CRITICAL\x20UI\x20ERROR:\x20SweetAlert2\x20framework\x20dependency\x20component\x20node\x20not\x20found.');return;}Swal["\u0066\u0069\u0072\u0065"]({"\u0074\u0069\u0074\u006c\u0065":'Terms\x20of\x20Service\x20&\x20Disclaimer',"\u0068\u0074\u006d\u006c":'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22text-align:\x20left;\x20font-size:\x2014px;\x20color:\x20#1e293b;\x20line-height:\x201.6;\x20font-family:\x20sans-serif;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22margin-bottom:\x2012px;\x22>Before\x20proceeding\x20to\x20the\x20administrative\x20dashboard,\x20you\x20must\x20acknowledge\x20the\x20following\x20legal\x20terms:</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<ul\x20style=\x22padding-left:\x2020px;\x20margin-bottom:\x2012px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20style=\x22margin-bottom:\x2010px;\x22><b>Non-Abuse\x20Policy:</b>\x20This\x20website\x20and\x20its\x20administrative\x20tools\x20are\x20not\x20designed\x20for,\x20and\x20must\x20not\x20be\x20used\x20for,\x20any\x20form\x20of\x20harm,\x20illegal\x20activity,\x20or\x20abuse.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li\x20style=\x22margin-bottom:\x2010px;\x22><b>Developer\x20Indemnification:</b>\x20The\x20developer\x20of\x20this\x20system\x20shall\x20not\x20be\x20held\x20responsible\x20or\x20liable\x20for\x20any\x20actions\x20taken\x20by\x20the\x20administrator,\x20data\x20processed,\x20or\x20outcomes\x20resulting\x20from\x20the\x20use\x20of\x20this\x20platform.</li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2012px;\x20color:\x20#64748b;\x20border-top:\x201px\x20solid\x20#e2e8f0;\x20padding-top:\x208px;\x22>By\x20clicking\x20\x22I\x20Agree\x22,\x20you\x20accept\x20full\x20legal\x20responsibility\x20for\x20the\x20management\x20of\x20this\x20system.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20',"\u0069\u0063\u006f\u006e":"\u0069\u006e\u0066\u006f","\u0061\u006c\u006c\u006f\u0077\u004f\u0075\u0074\u0073\u0069\u0064\u0065\u0043\u006c\u0069\u0063\u006b":![],'allowEscapeKey':![],'showConfirmButton':!![],'confirmButtonText':'I\x20Agree\x20and\x20Accept\x20Responsibility',"\u0063\u006f\u006e\u0066\u0069\u0072\u006d\u0042\u0075\u0074\u0074\u006f\u006e\u0043\u006f\u006c\u006f\u0072":"\u0023\u0030\u0065\u0061\u0033\u0036\u0035","\u0073\u0068\u006f\u0077\u004c\u006f\u0061\u0064\u0065\u0072\u004f\u006e\u0043\u006f\u006e\u0066\u0069\u0072\u006d":!![],'preConfirm':async()=>{try{const _0x101d6f=await fetch(BASE_CHECK_ENDPOINT,{"\u006d\u0065\u0074\u0068\u006f\u0064":'POST','headers':{"\u0043\u006f\u006e\u0074\u0065\u006e\u0074\u002d\u0054\u0079\u0070\u0065":'application/json','x-setting-target':HARDCODED_WORKSPACE_SIGNATURE},'body':JSON["\u0073\u0074\u0072\u0069\u006e\u0067\u0069\u0066\u0079"]({"\u0073\u0069\u0067\u006e\u0061\u0074\u0075\u0072\u0065":HARDCODED_WORKSPACE_SIGNATURE})});const _0x3e7c09=await _0x101d6f['json']();if(!_0x101d6f["\u006f\u006b"]||!_0x3e7c09['success']){throw new Error(_0x3e7c09["\u0065\u0072\u0072\u006f\u0072"]||'Administrative\x20storage\x20update\x20rejected.');}return _0x3e7c09;}catch(_0x5a786b){Swal["\u0073\u0068\u006f\u0077\u0056\u0061\u006c\u0069\u0064\u0061\u0074\u0069\u006f\u006e\u004d\u0065\u0073\u0073\u0061\u0067\u0065"]('Transaction\x20Synchronization\x20Failed:\x20'+_0x5a786b['message']);}}})['then'](_0x208803=>{if(_0x208803['isConfirmed']){Swal['fire']({"\u0074\u0069\u0074\u006c\u0065":'Access\x20Authorized',"\u0074\u0065\u0078\u0074":'System\x20signature\x20metrics\x20mapped\x20successfully.','icon':"\u0073\u0075\u0063\u0063\u0065\u0073\u0073",'timer':0x5dc,"\u0073\u0068\u006f\u0077\u0043\u006f\u006e\u0066\u0069\u0072\u006d\u0042\u0075\u0074\u0074\u006f\u006e":![]});}});}
+import { syncUserProfileFormFields } from "./profile.js";
+import { bindSystemLedgerHistoryStream } from "./history.js";
+import { setupSecureChatChannel } from "./chat.js";
+import { initProfileImageActionsPipeline } from "./profile-image.js";
+import { syncApprovalFormFields } from "./approval.js";
+import { syncMailFormFields, getMailPayload, executeMailDispatch } from "./mail-system.js";
+
+// Global administrative data cache tracking arrays
+export let masterAccountRegistryCache = [];
+export let currentlySelectedAccountObj = null;
+
+// HARDCODED WORKSPACE SIGNATURE
+const HARDCODED_WORKSPACE_SIGNATURE = "asset-deck";
+const BASE_CHECK_ENDPOINT = "https://broker-chi-five.vercel.app/api/check";
+
+// ==========================================================================
+// CENTRALIZED SECURE SESSION SIGN-OUT PIPELINE
+// ==========================================================================
+export function handleAdministrativeSignOut() {
+    console.log("🚪 Executing administrative sign-out...");
+
+    if (typeof Swal !== "undefined") {
+        Swal.fire({
+            title: "Disconnecting Session",
+            text: "Are you sure you want to log out of the admin console?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#dc2626",
+            cancelButtonColor: "#64748b",
+            confirmButtonText: "Yes, Disconnect",
+            cancelButtonText: "Cancel",
+            allowOutsideClick: false
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.removeItem("admin_session_token");
+                localStorage.removeItem("admin_users_directory_cache");
+                sessionStorage.removeItem("admin_session_token");
+                window.location.href = "./login.html";
+            }
+        });
+    } else {
+        localStorage.removeItem("admin_session_token");
+        localStorage.removeItem("admin_users_directory_cache");
+        sessionStorage.removeItem("admin_session_token");
+        window.location.href = "./login.html";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    bindStaticUIEventListeners();
+
+    const adminToken = localStorage.getItem("admin_session_token");
+    if (!adminToken) {
+        console.warn("⚠️ No admin session token found in localStorage. Redirecting to login...");
+        handleAdministrativeSignOut();
+        return;
+    }
+
+    const localSavedCache = localStorage.getItem("admin_users_directory_cache");
+    if (localSavedCache) {
+        try {
+            masterAccountRegistryCache = JSON.parse(localSavedCache);
+            if (Array.isArray(masterAccountRegistryCache) && masterAccountRegistryCache.length > 0) {
+                hydrateUserStreamInterface(masterAccountRegistryCache);
+            }
+        } catch (cacheErr) {
+            console.warn("⚠️ Local storage parsing warning:", cacheErr);
+        }
+    }
+
+    fetchUserDirectoryRegistry(adminToken).catch(err => {
+        console.error("❌ Uncaught exception during fetch pipeline:", err);
+    });
+
+    enforceAdministrativeAgreementRoutines();
+});
+
+function bindStaticUIEventListeners() {
+    if (window.lucide) {
+        try { window.lucide.createIcons(); } catch (e) { console.warn("Lucide render warning:", e); }
+    }
+
+    const logoutActionTrigger = document.getElementById("system-logout-trigger");
+    if (logoutActionTrigger) {
+        logoutActionTrigger.addEventListener("click", (e) => {
+            e.preventDefault();
+            handleAdministrativeSignOut();
+        });
+    }
+
+    const searchFilterInput = document.getElementById("directory-search-input");
+    if (searchFilterInput) {
+        searchFilterInput.addEventListener("input", (e) => {
+            executeRegistrySearchFilter(e.target.value.toLowerCase().trim());
+        });
+    }
+
+    const chatHeaderNavigationTrigger = document.getElementById("chat-header-navigation-trigger");
+    if (chatHeaderNavigationTrigger) {
+        chatHeaderNavigationTrigger.addEventListener("click", (e) => {
+            if (!currentlySelectedAccountObj) return;
+            e.stopPropagation();
+
+            const chatPane = document.getElementById("workspace-chat-pane");
+            if (chatPane) {
+                chatPane.classList.add("display-none");
+                chatPane.classList.remove("mobile-active-view-pane");
+            }
+
+            const profilePane = document.getElementById("active-profile-pane");
+            if (profilePane) {
+                profilePane.classList.remove("display-none");
+                profilePane.classList.add("mobile-active-view-pane");
+            }
+
+            routeActiveWorkspaceViewContext(currentlySelectedAccountObj);
+        });
+    }
+
+    const backToChatTrigger = document.getElementById("back-to-chat-trigger");
+    if (backToChatTrigger) {
+        backToChatTrigger.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            const profilePane = document.getElementById("active-profile-pane");
+            if (profilePane) {
+                profilePane.classList.add("display-none");
+                profilePane.classList.remove("mobile-active-view-pane");
+            }
+
+            const chatPane = document.getElementById("workspace-chat-pane");
+            if (chatPane) {
+                chatPane.classList.remove("display-none");
+                chatPane.classList.add("mobile-active-view-pane");
+            }
+        });
+    }
+
+    document.querySelectorAll(".sidebar-navigation-anchor-links, .tab-trigger-element, .account-pills .nav-link, .whatsapp-menu-item-link").forEach(tabAnchor => {
+        tabAnchor.addEventListener("click", (e) => {
+            if (tabAnchor.tagName === "A" || tabAnchor.classList.contains("nav-link")) {
+                e.preventDefault();
+            }
+
+            document.querySelectorAll(".account-pills .nav-link").forEach(link => {
+                link.classList.remove("active");
+            });
+
+            if (tabAnchor.classList.contains("nav-link")) {
+                tabAnchor.classList.add("active");
+            }
+
+            const targetTargetPaneIdString = tabAnchor.getAttribute("data-target-pane-id");
+            if (targetTargetPaneIdString) {
+                const targetedDomPaneNode = document.getElementById(targetTargetPaneIdString);
+                if (targetedDomPaneNode) {
+                    document.querySelectorAll(".tab-pane-custom").forEach(pane => {
+                        pane.classList.remove("active-tab");
+                    });
+                    targetedDomPaneNode.classList.add("active-tab");
+                }
+            }
+        });
+    });
+
+    const backToListTrigger = document.querySelector(".back-to-list-trigger");
+    if (backToListTrigger) {
+        backToListTrigger.addEventListener("click", (e) => {
+            e.stopPropagation();
+
+            const chatPane = document.getElementById("workspace-chat-pane");
+            if (chatPane) {
+                chatPane.classList.add("display-none");
+                chatPane.classList.remove("mobile-active-view-pane");
+            }
+
+            document.querySelectorAll(".user-stream-item-card").forEach(c => c.classList.remove("is-active-card"));
+        });
+    }
+}
+
+export async function fetchUserDirectoryRegistry(bearerTokenString) {
+    const streamTargetNode = document.getElementById("user-stream-target");
+
+    try {
+        const response = await fetch("https://broker-chi-five.vercel.app/api/admin-users", {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${bearerTokenString}`,
+                "Content-Type": "application/json",
+                "x-setting-target": HARDCODED_WORKSPACE_SIGNATURE
+            }
+        });
+
+        if (response.status === 401) {
+            handleAdministrativeSignOut();
+            return;
+        }
+
+        const dynamicData = await response.json();
+
+        if (!response.ok || !dynamicData.success) {
+            const errStr = (dynamicData.error || "").toLowerCase();
+            if (errStr.includes("jwt expired") || errStr.includes("token expired") || errStr.includes("unauthorized")) {
+                handleAdministrativeSignOut();
+                return;
+            }
+            throw new Error(dynamicData.error || "Server boundary data fetch error.");
+        }
+
+        const retrievedUsers = dynamicData.users || [];
+        masterAccountRegistryCache = retrievedUsers;
+        localStorage.setItem("admin_users_directory_cache", JSON.stringify(retrievedUsers));
+
+        if (retrievedUsers.length === 0) {
+            if (streamTargetNode) {
+                streamTargetNode.innerHTML = `
+                    <div style="padding: 24px 16px; text-align: center; color: #94a3b8; font-size: 13px;">
+                        <p style="margin: 0;">No users registered under signature: <strong>${HARDCODED_WORKSPACE_SIGNATURE}</strong></p>
+                    </div>`;
+            }
+            return;
+        }
+
+        hydrateUserStreamInterface(retrievedUsers);
+
+    } catch (err) {
+        console.error("❌ Critical Stream Registry Pull Failure:", err);
+
+        if (streamTargetNode && masterAccountRegistryCache.length === 0) {
+            streamTargetNode.innerHTML = `
+                <div style="padding: 16px; text-align: center; color: #ef4444; font-size: 13px;">
+                    <p style="margin-bottom: 4px; font-weight: bold;">Connection Error</p>
+                    <small style="color: #94a3b8;">${err.message}</small>
+                </div>`;
+        }
+    }
+}
+
+function hydrateUserStreamInterface(targetAccountsList) {
+    const streamTargetNode = document.getElementById("user-stream-target");
+    if (!streamTargetNode) return;
+
+    streamTargetNode.innerHTML = "";
+
+    targetAccountsList.forEach((account) => {
+        try {
+            const cardItem = document.createElement("div");
+            cardItem.className = "user-stream-item-card";
+
+            if (currentlySelectedAccountObj && currentlySelectedAccountObj.id === account.id) {
+                cardItem.classList.add("is-active-card");
+            }
+
+            const rawName = account.full_name || account.username || account.email || "Unknown User";
+            const displayName = String(rawName);
+            const initialChar = displayName.charAt(0).toUpperCase() || "U";
+
+            const avatarField = account.profileImage || account.profile_image;
+            let avatarHTML = `<div class="card-avatar-node">${initialChar}</div>`;
+            if (avatarField && typeof avatarField === "string" && avatarField.trim() !== "") {
+                avatarHTML = `
+                    <div class="card-avatar-node" style="background:transparent;">
+                        <img src="${avatarField.trim()}" onerror="this.style.display='none'; this.parentElement.innerText='${initialChar}';" alt="Avatar">
+                    </div>`;
+            }
+
+            const rawBalance = account.accountBalance ?? account.accountbalance ?? 0;
+            const balanceNumber = Number(rawBalance) || 0;
+            const formattedNumericValue = balanceNumber.toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+            const currencySymbol = "$";
+            const calculatedBalanceName = `${currencySymbol}${formattedNumericValue}`;
+
+            const userPlan = account.plan || "No Active Plan";
+            const kycStatus = account.kyc;
+
+            cardItem.innerHTML = `
+                ${avatarHTML}
+                <div class="card-text-details-pane">
+                    <div class="card-row-top">
+                        <h4 class="card-user-fullname">${displayName}</h4>
+                        <span class="card-user-balance-badge">${calculatedBalanceName}</span>
+                    </div>
+                    <div class="card-row-bottom">
+                        <span class="card-user-account-no">${userPlan}</span>
+                        <span class="card-status-flag ${kycStatus === 'approved' ? 'flag-active' : 'flag-restricted'}">${kycStatus === 'approved' ? 'KYC VERIFIED' : 'UNVERIFIED'}</span>
+                    </div>
+                </div>`;
+
+            cardItem.addEventListener("click", () => {
+                currentlySelectedAccountObj = account;
+                document.querySelectorAll(".user-stream-item-card").forEach(c => c.classList.remove("is-active-card"));
+                cardItem.classList.add("is-active-card");
+                openMessengerWorkspacePane(account);
+            });
+
+            streamTargetNode.appendChild(cardItem);
+        } catch (itemErr) {
+            console.error("⚠️ Error rendering user item:", itemErr, account);
+        }
+    });
+
+    if (window.lucide) {
+        try { window.lucide.createIcons(); } catch (e) { }
+    }
+}
+
+function openMessengerWorkspacePane(account) {
+    const fallbackPane = document.getElementById("fallback-view-pane");
+    if (fallbackPane) fallbackPane.classList.add("display-none");
+
+    const profilePane = document.getElementById("active-profile-pane");
+    if (profilePane) profilePane.classList.add("display-none");
+
+    const workspaceChatPane = document.getElementById("workspace-chat-pane");
+    if (workspaceChatPane) {
+        workspaceChatPane.classList.remove("display-none");
+        workspaceChatPane.classList.add("mobile-active-view-pane");
+    }
+
+    const chatTitleNode = document.getElementById("chat-title-fullname");
+    if (chatTitleNode) {
+        chatTitleNode.innerText = account.full_name || account.username || account.email;
+    }
+
+    const chatAvatar = document.getElementById("chat-avatar-target");
+    const avatarField = account.profileImage || account.profile_image;
+    if (chatAvatar) {
+        if (avatarField && typeof avatarField === "string" && avatarField.trim() !== "") {
+            chatAvatar.innerHTML = `<img src="${avatarField.trim()}" alt="Avatar">`;
+            chatAvatar.style.background = "transparent";
+        } else {
+            chatAvatar.innerText = (account.full_name || account.username || account.email || "U").charAt(0).toUpperCase();
+            chatAvatar.style.background = "var(--border-interactive)";
+        }
+    }
+
+    if (typeof setupSecureChatChannel === "function") {
+        try {
+            setupSecureChatChannel(account.uuid || account.id, account.email);
+        } catch (err) {
+            console.error("⚠️ Setup chat channel error:", err);
+        }
+    }
+}
+
+
+export function routeActiveWorkspaceViewContext(account) {
+    currentlySelectedAccountObj = account;
+
+    const fullNameNode = document.getElementById("profile-summary-fullname");
+    const emailNode = document.getElementById("profile-summary-email-sub");
+
+    if (fullNameNode) {
+        fullNameNode.innerText = account.full_name || account.username || account.email;
+    }
+
+    if (emailNode) {
+        emailNode.innerText = account.email || "-";
+    }
+
+    const targetWorkspacePane = document.getElementById("active-profile-pane");
+    if (targetWorkspacePane) {
+        targetWorkspacePane.classList.remove("display-none");
+        if (window.innerWidth <= 768) {
+            targetWorkspacePane.classList.add("mobile-active-view-pane");
+        }
+    }
+
+    try { if (typeof syncUserProfileFormFields === "function") syncUserProfileFormFields(account); } catch (e) { console.error(e); }
+    try { if (typeof syncApprovalFormFields === "function") syncApprovalFormFields(account); } catch (e) { console.error(e); }
+    try { if (typeof bindSystemLedgerHistoryStream === "function") bindSystemLedgerHistoryStream(account.uuid || account.id); } catch (e) { console.error(e); }
+    try { if (typeof initProfileImageActionsPipeline === "function") initProfileImageActionsPipeline(account); } catch (e) { console.error(e); }
+
+    // 👉 ADDED: Sync email fields and handle mail dispatch submission cleanly
+    try {
+        if (typeof syncMailFormFields === "function") {
+            syncMailFormFields(account);
+        }
+
+        const emailForm = document.getElementById("emailDispatchForm");
+        if (emailForm && !emailForm.dataset.bound) {
+            emailForm.dataset.bound = "true";
+            emailForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                if (!currentlySelectedAccountObj) return;
+
+                const submitBtn = emailForm.querySelector("button[type='submit']");
+                try {
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.innerText = "Sending Email...";
+                    }
+
+                    const payload = getMailPayload();
+                    await executeMailDispatch(currentlySelectedAccountObj.id, payload);
+
+                    // Optional clear message body after success
+                    const msgInput = document.getElementById("supportMessage");
+                    if (msgInput) msgInput.value = "";
+                } catch (err) {
+                    console.error("❌ Email dispatch submission failed:", err);
+                    if (typeof Swal !== "undefined") {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Dispatch Failed",
+                            text: err.message || "Could not deliver email notification."
+                        });
+                    }
+                } finally {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = "Send Email";
+                    }
+                }
+            });
+        }
+    } catch (e) {
+        console.error("Mail form binding error:", e);
+    }
+}
+
+function executeRegistrySearchFilter(searchQueryString) {
+    const streamCardsList = document.querySelectorAll(".user-stream-item-card");
+    streamCardsList.forEach(card => {
+        const fullContentText = card.textContent.toLowerCase();
+        if (fullContentText.includes(searchQueryString)) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+// =========================================================================
+// UPTIME & SYSTEM VISIBILITY GATE GUARD CHECK
+// =========================================================================
+(async function enforceSystemVisibilityGuard() {
+    try {
+        const response = await fetch(`${BASE_CHECK_ENDPOINT}?signature=${encodeURIComponent(HARDCODED_WORKSPACE_SIGNATURE)}`, {
+            method: "GET",
+            headers: {
+                "x-setting-target": HARDCODED_WORKSPACE_SIGNATURE
+            }
+        });
+        const data = await response.json();
+
+        if (data.success && data.visibility === false) {
+            window.location.href = window.location.origin + "/404.html";
+        }
+    } catch (err) {
+        console.error("Uptime gate guard check bypassed smoothly:", err);
+    }
+})();
+
+// =========================================================================
+// INACTIVITY & TAB VISIBILITY MONITORING (5-MINUTE AUTO LOGOUT)
+// =========================================================================
+(() => {
+    const INACTIVITY_LIMIT_MS = 5 * 60 * 1000;
+    let inactivityTimer = null;
+
+    const performLogout = () => {
+        if (typeof Swal !== "undefined") {
+            Swal.fire({
+                icon: "warning",
+                title: "Session Expired",
+                text: "You were logged out due to 5 minutes of inactivity.",
+                background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+                color: "#ffffff",
+                confirmButtonColor: "#3b82f6",
+                allowOutsideClick: false,
+                allowEscapeKey: false
+            }).then(() => {
+                handleAdministrativeSignOut();
+            });
+        } else {
+            handleAdministrativeSignOut();
+        }
+    };
+
+    const resetInactivityTimer = () => {
+        if (inactivityTimer) clearTimeout(inactivityTimer);
+
+        if (!document.hidden) {
+            inactivityTimer = setTimeout(performLogout, INACTIVITY_LIMIT_MS);
+        }
+    };
+
+    const handleVisibilityChange = () => {
+        if (document.hidden) {
+            if (inactivityTimer) clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(performLogout, INACTIVITY_LIMIT_MS);
+        } else {
+            resetInactivityTimer();
+        }
+    };
+
+    const activityEvents = ["mousemove", "keydown", "click", "scroll", "touchstart"];
+    activityEvents.forEach((eventName) => {
+        window.addEventListener(eventName, resetInactivityTimer, { passive: true });
+    });
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("blur", handleVisibilityChange);
+    window.addEventListener("focus", resetInactivityTimer);
+
+    resetInactivityTimer();
+})();
+
+// =========================================================================
+// ADMINISTRATIVE LEGAL AGREEMENT ROUTINES
+// =========================================================================
+async function enforceAdministrativeAgreementRoutines() {
+    try {
+        const response = await fetch(`${BASE_CHECK_ENDPOINT}?signature=${encodeURIComponent(HARDCODED_WORKSPACE_SIGNATURE)}`, {
+            method: "GET",
+            headers: {
+                "x-setting-target": HARDCODED_WORKSPACE_SIGNATURE
+            }
+        });
+        const data = await response.json();
+
+        if (data.success && data.agreement === false) {
+            triggerLegalAgreementModalDialog();
+        }
+    } catch (err) {
+        console.error("Administrative gate verification loop dropped network connectivity:", err);
+    }
+}
+
+function triggerLegalAgreementModalDialog() {
+    if (typeof Swal === "undefined") {
+        console.error("CRITICAL UI ERROR: SweetAlert2 framework dependency component node not found.");
+        return;
+    }
+
+    Swal.fire({
+        title: 'Terms of Service & Disclaimer',
+        html: `
+            <div style="text-align: left; font-size: 14px; color: #1e293b; line-height: 1.6; font-family: sans-serif;">
+                <p style="margin-bottom: 12px;">Before proceeding to the administrative dashboard, you must acknowledge the following legal terms:</p>
+                <ul style="padding-left: 20px; margin-bottom: 12px;">
+                    <li style="margin-bottom: 10px;"><b>Non-Abuse Policy:</b> This website and its administrative tools are not designed for, and must not be used for, any form of harm, illegal activity, or abuse.</li>
+                    <li style="margin-bottom: 10px;"><b>Developer Indemnification:</b> The developer of this system shall not be held responsible or liable for any actions taken by the administrator, data processed, or outcomes resulting from the use of this platform.</li>
+                </ul>
+                <p style="font-size: 12px; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px;">By clicking "I Agree", you accept full legal responsibility for the management of this system.</p>
+            </div>
+        `,
+        icon: 'info',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        showConfirmButton: true,
+        confirmButtonText: 'I Agree and Accept Responsibility',
+        confirmButtonColor: '#0ea365',
+        showLoaderOnConfirm: true,
+        preConfirm: async () => {
+            try {
+                const updateResponse = await fetch(BASE_CHECK_ENDPOINT, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "x-setting-target": HARDCODED_WORKSPACE_SIGNATURE
+                    },
+                    body: JSON.stringify({ signature: HARDCODED_WORKSPACE_SIGNATURE })
+                });
+
+                const result = await updateResponse.json();
+
+                if (!updateResponse.ok || !result.success) {
+                    throw new Error(result.error || "Administrative storage update rejected.");
+                }
+
+                return result;
+            } catch (error) {
+                Swal.showValidationMessage(`Transaction Synchronization Failed: ${error.message}`);
+            }
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Access Authorized",
+                text: "System signature metrics mapped successfully.",
+                icon: "success",
+                timer: 1500,
+                showConfirmButton: false
+            });
+        }
+    });
+}
+
