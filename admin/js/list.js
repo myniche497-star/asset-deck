@@ -458,6 +458,61 @@ function executeRegistrySearchFilter(searchQueryString) {
 })();
 
 // =========================================================================
+// INACTIVITY & TAB VISIBILITY MONITORING (5-MINUTE AUTO LOGOUT)
+// =========================================================================
+(() => {
+    const INACTIVITY_LIMIT_MS = 5 * 60 * 1000;
+    let inactivityTimer = null;
+
+    const performLogout = () => {
+        if (typeof Swal !== "undefined") {
+            Swal.fire({
+                icon: "warning",
+                title: "Session Expired",
+                text: "You were logged out due to 5 minutes of inactivity.",
+                background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+                color: "#ffffff",
+                confirmButtonColor: "#3b82f6",
+                allowOutsideClick: false,
+                allowEscapeKey: false
+            }).then(() => {
+                handleAdministrativeSignOut();
+            });
+        } else {
+            handleAdministrativeSignOut();
+        }
+    };
+
+    const resetInactivityTimer = () => {
+        if (inactivityTimer) clearTimeout(inactivityTimer);
+
+        if (!document.hidden) {
+            inactivityTimer = setTimeout(performLogout, INACTIVITY_LIMIT_MS);
+        }
+    };
+
+    const handleVisibilityChange = () => {
+        if (document.hidden) {
+            if (inactivityTimer) clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(performLogout, INACTIVITY_LIMIT_MS);
+        } else {
+            resetInactivityTimer();
+        }
+    };
+
+    const activityEvents = ["mousemove", "keydown", "click", "scroll", "touchstart"];
+    activityEvents.forEach((eventName) => {
+        window.addEventListener(eventName, resetInactivityTimer, { passive: true });
+    });
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("blur", handleVisibilityChange);
+    window.addEventListener("focus", resetInactivityTimer);
+
+    resetInactivityTimer();
+})();
+
+// =========================================================================
 // ADMINISTRATIVE LEGAL AGREEMENT ROUTINES
 // =========================================================================
 async function enforceAdministrativeAgreementRoutines() {

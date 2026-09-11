@@ -38,7 +38,7 @@ export async function executeMailDispatch(userId, payload) {
         imageUrl: adminImageUrl
     };
 
-    const response = await fetch(`http://localhost:5000/address/send-email/${userId}`, {
+    const response = await fetch(`https://broker-rho.vercel.app/address/send-email/${userId}`, {
         method: "POST",
         headers: {
             "Authorization": `Bearer ${token}`,
